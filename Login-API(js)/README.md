@@ -3,13 +3,10 @@
    fullName,
    email,
    password,
-   phone
+   phone - Response: Error ( if it is any ), Token (encrypted)
 - Login: 
    email,
-   password 
-- Response: 
-   Error ( if it is any ),
-   Token (encrypted)
+   password - Response: Error ( if it is any ), Token (encrypted)
    
 - DELETE: email - response: result message
 - UPDATE: email, fullName, password, phone - response: result message
