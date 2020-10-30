@@ -1,12 +1,12 @@
-- Data sending:
-- Regíter:
-   fullName
-   email
-   password
+--- Data sending ---
+- Register:
+   fullName,
+   email,
+   password,
    phone
 - Login: 
-   email
+   email,
    password 
 - Response: 
-   Error ( if it is any )
+   Error ( if it is any ),
    Token (encrypted)
