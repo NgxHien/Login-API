@@ -119,64 +119,41 @@ const Login = async (req, res) => {
      * @param req - Request's data
      * @param res - Response's data
      */
-const Update = async (req, res) => {
-    const { email, password } = req.body;
+const Delete = async (req, res) => {
+    const { email } = req.body;
     try {
         if (!email) {
-            throw new Error("Something went wrong");
+            throw new Error("Need email to delete!");
         }
+        await User.deleteOne({ email });
         const userWithEmail = await User.find({ email });
-        if (!userWithEmail.length) {
-            throw new Error("Account does not exist!!!");
+        if (userWithEmail.length) {
+            throw new Error("Delete failed!!");
         }
-        res.json(success);
+        res.json({ message: 'Account had been deleted' })
     } catch (err) {
         res.json({ message: err.message });
     }
 }
 
-/**
-     * Get all user's infomation
-     *
-     * @param req - Request's data
-     * @param res - Response's data
-     */
-
-const getUsers = async (req, res) => {
+const Update = async (req, res) => {
+    const { email, password, fullName, phone } = req.body;
     try {
-        const Users = await UsersModel.find();
-        const success = { data: { Users } };
-        res.json(success);
+        if (!email) {
+            throw new Error("Must have email");
+        }
+        if (password) await User.updateOne({ email }, { password })
+        if (fullName) await User.updateOne({ email }, { fullName })
+        if (phone) await User.updateOne({ email }, { phone })
+        res.json({ message: 'Account updated' })
     } catch (err) {
-        const fail = { reason: err.message };
-        res.json(fail);
+        res.json({ message: err.message });
     }
 }
-
-/**
-     * Get user's infomation by email
-     *
-     * @param req - Request's data
-     * @param res - Response's data
-     */
-
-const getUser = async (req, res) => {
-    try {
-        const { email } = req.query;
-        const user = await User.find({ email });
-        const success = { data: { user } };
-        res.json(success);
-    } catch (err) {
-        const fail = { reason: err.message };
-        res.json(fail);
-    }
-}
-
 
 module.exports = {
     Register,
     Login,
-    Update,
-    getUsers,
-    getUser
+    Delete,
+    Update
 }

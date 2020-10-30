@@ -9,5 +9,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/register', user.Register);
 router.post('/login', user.Login);
+router.delete('/delete', user.Delete);
+router.post('/update', user.Update);
 
 module.exports = router;
