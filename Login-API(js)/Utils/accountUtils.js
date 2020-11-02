@@ -48,13 +48,13 @@ const validatePass = (password) => {
     return { valid: true }
 }
 
-const generateToken = (payload, header, sercetkey) => {
+const generateToken = (payload, sercetkey) => {
     return jwt.sign(
         {
             ...payload
         },
         sercetkey,
-        { algorithm: 'HS256', header: header }
+        { algorithm: 'HS256' }
     );
 }
 

@@ -42,20 +42,12 @@ const Register = async (req, res) => {
         });
         user.save();
         const now = Math.floor(Date.now() / 1000);
-        var exp = now + 604800;
-        const header = { cty: "stringee-api;v=1" };
         const tokenRegPayload = {
-            jti: config.get("API_KEY_SID") + "-" + now,
-            iss: config.get("API_KEY_SID"),
-            exp: exp,
-            fullName,
-            email,
-            phone,
-            passwordUpdateTime: nowDateType
+            user_id: now.toString(),
+            email: email
         }
         const regToken = accountUtils
             .generateToken(tokenRegPayload,
-                header,
                 config.get("API_KEY_SECRET"));
         const success = { data: { regToken } };
         res.json(success);
@@ -89,22 +81,12 @@ const Login = async (req, res) => {
         if (!checkPass) {
             throw new Error("Wrong email or password!!!");
         }
-        const now = Math.floor(Date.now() / 1000);
-        var exp = now + 604800;
-        const header = { cty: "stringee-api;v=1" };
         const tokenPayload = {
-            jti: config.get("API_KEY_SID") + "-" + now,
-            iss: config.get("API_KEY_SID"),
-            exp: exp,
             userId: _id,
-            fullName: userWithEmail[0].fullName,
             email: userWithEmail[0].email,
-            phone: userWithEmail[0].phone,
-            passwordUpdateTime
         }
         const accessToken = accountUtils
             .generateToken(tokenPayload,
-                header,
                 config.get("API_KEY_SECRET"))
         const success = { data: { _id, fullName, email, phone, accessToken } };
         res.json(success);
