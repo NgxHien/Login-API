@@ -1,9 +1,7 @@
 {
-    "PORT": 4000,
     "MONGO_URL": "mongodb+srv://hienngx:99918072@cluster0.05cor.mongodb.net/User?retryWrites=true&w=majority",
     "ACCESS_TOKEN_EXPIRE_TIME": "1h",
-    "SECRET_ACCESS_TOKEN_KEY":"vcY1Rj}s.e}yqFb5e",
     "API_KEY_SECRET": "YXVCem4xYk1kclBlRlpqcTdrbVpjOHNNUEIxdkhIVw==",
-    "API_KEY_SID": "SKGzBnqEbsoDEOqsLJqeftwi5cF6Eq0QEi"
+    "API_SALT": "$2b$10$Zlc1rbj86FvJWW3JGwosnO"
 }
   

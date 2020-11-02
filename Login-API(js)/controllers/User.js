@@ -28,8 +28,7 @@ const Register = async (req, res) => {
             throw new Error("Email exists!!!");
 
         }
-        const salt = await bcrypt.genSalt(10);
-        const hashPassword = await bcrypt.hash(password, salt);
+        const hashPassword = await bcrypt.hash(password, config.get("API_SALT"));
         const nowTimeStamp = Date.now();
         const nowDateType = new Date(nowTimeStamp);
         const user = new User({
