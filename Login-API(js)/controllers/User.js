@@ -40,9 +40,8 @@ const Register = async (req, res) => {
             status: false
         });
         user.save();
-        const now = Math.floor(Date.now() / 1000);
         const tokenRegPayload = {
-            user_id: now.toString(),
+            userId: user._id,
             email: email
         }
         const regToken = accountUtils
@@ -101,16 +100,21 @@ const Login = async (req, res) => {
      * @param res - Response's data
      */
 const Delete = async (req, res) => {
-    const { email } = req.body;
+    const { email, token } = req.body;
     try {
         if (!email) {
             throw new Error("Need email to delete!");
         }
-        await User.deleteOne({ email });
         const userWithEmail = await User.find({ email });
-        if (userWithEmail.length) {
-            throw new Error("Delete failed!!");
+        if (!userWithEmail.length) {
+            throw new Error("You dont have account in system!!!");
         }
+        const userWithToken = accountUtils.verifyToken(token, config.get("API_KEY_SECRET"));
+        if (userWithEmail[0]._id != userWithToken.userId) {
+            throw new Error("Your token is wrong!!!");
+        }
+
+        await User.deleteOne({ email });
         res.json({ message: 'Account had been deleted' })
     } catch (err) {
         res.json({ message: err.message });
@@ -118,14 +122,25 @@ const Delete = async (req, res) => {
 }
 
 const Update = async (req, res) => {
-    const { email, password, fullName, phone } = req.body;
+    const { email, password, fullName, phone, token } = req.body;
     try {
         if (!email) {
             throw new Error("Must have email");
         }
+
+        const userWithEmail = await User.find({ email });
+        if (!userWithEmail.length) {
+            throw new Error("You dont have account in system!!!");
+        }
+        const userWithToken = accountUtils.verifyToken(token, config.get("API_KEY_SECRET"));
+        if (userWithEmail[0]._id != userWithToken.userId) {
+            throw new Error("Your token is wrong!!!");
+        }
+
         if (password) await User.updateOne({ email }, { password })
-        if (fullName) await User.updateOne({ email }, { fullName })
-        if (phone) await User.updateOne({ email }, { phone })
+        if (fullName) await User.updateOne({ fullName }, { fullName })
+        if (phone) await User.updateOne({ phone }, { phone })
+
         res.json({ message: 'Account updated' })
     } catch (err) {
         res.json({ message: err.message });

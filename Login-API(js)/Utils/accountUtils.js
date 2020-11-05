@@ -58,7 +58,12 @@ const generateToken = (payload, sercetkey) => {
     );
 }
 
+const verifyToken = (token, sercetkey) => {
+    return jwt.verify(token, sercetkey, ['HS256'])
+}
+
 module.exports = {
     validatePass,
-    generateToken
+    generateToken,
+    verifyToken
 }
