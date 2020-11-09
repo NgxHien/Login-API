@@ -74,7 +74,7 @@ const Login = async (req, res) => {
         if (!userWithEmail.length) {
             throw new Error("Account does not exist!!!");
         }
-        const { _id, passwordUpdateTime, fullName, phone } = userWithEmail[0];
+        const { _id, fullName, phone } = userWithEmail[0];
         const checkPass = bcrypt.compareSync(password, userWithEmail[0].password);
         if (!checkPass) {
             throw new Error("Wrong email or password!!!");
@@ -100,7 +100,7 @@ const Login = async (req, res) => {
      * @param res - Response's data
      */
 const Delete = async (req, res) => {
-    const { email, token } = req.body;
+    const { email } = req.body;
     try {
         if (!email) {
             throw new Error("Need email to delete!");
@@ -109,11 +109,6 @@ const Delete = async (req, res) => {
         if (!userWithEmail.length) {
             throw new Error("You dont have account in system!!!");
         }
-        const userWithToken = accountUtils.verifyToken(token, config.get("API_KEY_SECRET"));
-        if (userWithEmail[0]._id != userWithToken.userId) {
-            throw new Error("Your token is wrong!!!");
-        }
-
         await User.deleteOne({ email });
         res.json({ message: 'Account had been deleted' })
     } catch (err) {
@@ -122,7 +117,7 @@ const Delete = async (req, res) => {
 }
 
 const Update = async (req, res) => {
-    const { email, password, fullName, phone, token } = req.body;
+    const { email, password, fullName, phone } = req.body;
     try {
         if (!email) {
             throw new Error("Must have email");
@@ -132,11 +127,6 @@ const Update = async (req, res) => {
         if (!userWithEmail.length) {
             throw new Error("You dont have account in system!!!");
         }
-        const userWithToken = accountUtils.verifyToken(token, config.get("API_KEY_SECRET"));
-        if (userWithEmail[0]._id != userWithToken.userId) {
-            throw new Error("Your token is wrong!!!");
-        }
-
         if (password) await User.updateOne({ email }, { password })
         if (fullName) await User.updateOne({ fullName }, { fullName })
         if (phone) await User.updateOne({ phone }, { phone })
