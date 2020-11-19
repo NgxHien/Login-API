@@ -1,0 +1,57 @@
+﻿.pagination {
+    display: flex;
+    width: calc(100% - 1px);
+    height: 20px;
+    align-items:center;
+    border: 1px solid #ccc;
+    background-color: #ededed !important;
+}
+    .pagination button {
+        height: 100%;
+        width: 24px;
+        border: none;
+        /*  background-color:#82a6fc;*/
+        background-position-y: 2px;
+        outline:none;
+    }
+     .pagination button:focus{
+         background-color:#dadada;
+     }
+.pagination input {
+    width: 30px;
+    margin: 0 5px;
+    border:1px solid #ccc;
+    outline:none;
+}
+    .pagination .icon-page-first {
+        background-image: url('../../content/images/grid/page-first.png');
+        background-repeat: no-repeat;
+       
+    }
+    .pagination .icon-page-prev {
+        background-image: url('../../content/images/grid/page-prev.png');
+        background-repeat: no-repeat;
+        margin-right:10px;
+    }
+    .pagination .icon-page-next {
+        background-image: url('../../content/images/grid/page-next.png');
+        background-repeat: no-repeat;
+        margin-left:10px;
+    }
+    .pagination .icon-page-last {
+        background-image: url('../../content/images/grid/page-last.png');
+        background-repeat: no-repeat;
+    }
+    .pagination .icon-refresh {
+        background-image: url('../../content/images/grid/refresh.png');
+        background-repeat: no-repeat;
+    }
+    .pagination select{
+        margin-left:10px;
+        width:50px;
+        border:1px solid #ccc;
+    }
+    .pagination .numberRecordOnpage {
+        position:absolute;
+        right:20px;
+    }

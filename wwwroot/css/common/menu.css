@@ -1,0 +1,94 @@
+﻿.menu {
+    color: #ffffff;
+}
+
+    .menu .menu-item {
+        display: flex;
+        width: calc(100% - 18px);
+        height: 40px;
+        background-color: #0973b9;
+        align-items: center;
+        padding-left: 18px;
+        border-top: 1px solid #178ad6;
+        border-bottom: 1px solid #03578e;
+        cursor: pointer;
+    }
+
+        .menu .menu-item:hover {
+            background-color: #bb7728;
+        }
+
+    .menu .menu-item-icon {
+        width: 23px;
+        height: 23px;
+        background-image: url('../../content/images/iconmenu.png');
+        background-repeat:no-repeat;
+    }
+
+    .menu .menu-item-text {
+        margin-left: 10px;
+        line-height: 40px;
+    }
+    /* icon position*/
+    .menu .icon-home {
+        background-position: -5px -5px;
+    }
+
+    .menu .icon-report {
+        background-position: -3px -194px;
+    }
+
+    .menu .icon-sale {
+        background-position: -1px -377px;
+    }
+
+    .menu .icon-directory {
+        background-position: -4px -40px;
+    }
+
+    .menu .icon-money {
+        background-position: -7px -81px;
+    }
+
+    .menu .icon-deposit {
+        background-image: url('../../content/images/icon-deposit.png');
+/*        background-position: -3px -117px;*/
+    }
+    .menu .icon-cost {
+        background-image: url('../../content/images/icon-cost.png');
+/*        background-position: -3px -117px;*/
+    }
+    .menu .icon-discount {
+        background-position: -3px -117px;
+    }
+    .menu .icon-menu {
+/*        background-image: url('../../content/images/ic_hoadon.png');*/
+        background-image: url('/content/images/vector-smart-object.png');
+        /*        background-position: -3px -117px;*/
+    }
+    .menu .icon-category {
+        background-position: -4px -421px;
+    }
+    .menu .icon-cancel {
+        background-image: url('/content/images/cancel-invoice.png');
+    }
+    .menu .icon-setup {
+        background-position: -2px -234px;
+    }
+    .menu .icon-helps {
+        background-image: url('/content/images/iconhelp.png');
+    }
+    .menu .icon-subscription {
+        background-image: url('/content/images/icon-subscriber.png');
+    }
+    .menu .icon-application {
+        background-position: -4px -421px;
+    }
+    .menu .icon-5food {
+        background-image: url('/content/images/5food.png');
+    }
+
+
+    .bg-primary {
+        background-color: #0973b9;
+    }

@@ -1,0 +1,62 @@
+﻿.container {
+    width: 100%;
+    height: calc(100vh - 55px);
+    display: flex;
+}
+
+    .container .menu {
+        
+        width:230px;
+        height: 100%;
+        background-color: #0973b9;
+    }
+    .container .content {
+        width: calc(100% - 230px);
+        
+        height: calc(100% - 16px);
+        padding: 8px;
+        
+    }
+    .container .content-header{
+        height:40px;
+         display: flex;
+        
+    }
+    .content .content_header_left{
+        width:50%;
+        float:left;
+        display:flex;
+        align-items:center;
+    }
+        .content .content_header_left a {
+            color: #2ea8e2;
+            text-decoration: none;
+        }
+    .content .icon_arrow {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: 0 -1248px !important;
+        margin:0 8px;
+    }
+    .content .content_header_right{
+        width:50%;
+        float:right;
+        display:flex;
+        align-items:center;
+    }
+.content .content_header_right input[type=text]{
+    height:20px;
+  
+}
+   /* .container .return{
+        border:1px solid #ccc;
+    }
+    .container .react {
+        border: 1px solid #ccc;
+    }*/
+
+        .container .content-body {
+            width: 100%;
+            height: calc(100% - 42px);
+        }

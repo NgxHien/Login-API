@@ -1,0 +1,103 @@
+﻿button .btn-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url('../../content/images/iconsprite.png');
+    background-position: 0 -2648px !important;
+    
+}
+button:focus {
+    outline: none;
+}
+
+    button .btn-icon.btn-icon-add {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: 0 -2648px !important;
+    }
+
+    button .btn-icon.btn-icon-duplicate {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: -1px -1888px !important;
+    }
+
+    button .btn-icon.btn-icon-edit {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: 0 -1872px !important;
+    }
+
+    button .btn-icon.btn-icon-delete {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: -1px -2048px !important;
+    }
+
+    button .btn-icon.btn-icon-refresh {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: 0 -2586px !important;
+    }
+    button .btn-icon.btn-icon-import {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/import16.png') ;
+        background-position:-2px -2px !important;
+        
+    }
+    button .btn-icon.btn-icon-export {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: 0 -1824px !important;
+    }
+    button .btn-icon.btn-icon-groupcustomer {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/ic_gopkhachhang.png');
+       
+        background-position: 0 1px !important;
+    }
+    button .btn-icon.btn-icon-help {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: 0 -1600px !important;
+    }
+    button .btn-icon.btn-icon-save {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: -1px -768px !important;
+    }
+    button .btn-icon.btn-icon-saveas {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: 0 1992px !important;
+    }
+    button .btn-icon.btn-icon-cancel{
+        width: 16px;
+        height: 16px;
+        background-image: url('../../content/images/iconsprite.png');
+        background-position: 0 -1968px !important;
+    }
+    button:disabled:hover{
+        border:none;
+        background:#ededed;
+    }
+/*    Css button dialog footer*/
+button .btn-text {
+    margin-left: 4px;
+}
+
+button:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+

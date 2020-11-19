@@ -1,0 +1,84 @@
+﻿.grid {
+    width: calc(100% - 1px);
+    height: calc(100% - 55px);
+    border: 1px solid #ccc;
+    border-top: none;
+    overflow: auto;
+    white-space:nowrap;
+}
+
+.grid table {
+    border-collapse: collapse;
+    border-color: #ccc;
+    border: none;
+    min-width: 100%;
+    text-align:center;
+    /* display: block; */
+}
+
+    table thead {
+        border-top: none;
+        /*background-color: #ededed !important;*/
+        background-color: #ededed !important;
+    }
+
+        table thead th {
+            font-weight: normal;
+            height: 26px;
+          
+        }
+
+    .grid table tr td {
+         padding: 2px 4px;
+    }
+    .grid table tr td:nth-child(1){
+       
+    }
+    .grid table input[type=checkbox]{
+        width:16px;
+    }
+    .grid table thead input[type=checkbox]{
+        margin:6px;
+    }
+
+
+#tableListCustomer tr:nth-child(even) {
+    background-color: #f1fffd;
+}
+
+#tableListCustomer tr:hover {
+    background-color: #d4dffd;
+}
+#tableListEmployee tr:hover {
+    background-color: #d4dffd;
+}
+table tbody tr.row-selected {
+    background-color: #a4befc !important;
+}
+table tbody tr.row-select {
+    background-color: #f8caca !important;
+}
+
+
+.tableFixHead thead th {
+    position: sticky;
+    top: -1px;
+    background: #eee;
+    padding: 0 6px;
+}
+    .tableFixHead thead th input {
+        width: calc(100% - 29px);
+        height:16px;
+        float: right;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+    .tableFixHead thead th button {
+        width: 20px;
+        height:20px;
+        border: 1px solid #ccc;
+        outline: none;
+        align-items:center;
+        
+    }
+

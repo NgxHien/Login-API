@@ -1,0 +1,280 @@
+﻿.form-dialog {
+    position: absolute;
+    background-color:#ccc;
+    display: none;
+}
+
+.dialog-model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.4;
+}
+
+.dialog {
+    position: fixed;
+    width: 800px;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 350px);
+    border-radius: 4px;
+    border: 5px solid #0072bc;
+    background-color: #f8f8f8;
+}
+
+    .dialog .dialog-title-bar {
+        height: 24px;
+        width: 100%;
+        background-color: #0072bc;
+        color: #ffffff;
+
+    }
+
+        .dialog .dialog-title-bar .title {
+            padding-left: 4px;
+            line-height: 25px;
+            float: left;
+            
+        }
+
+        .dialog .dialog-title-bar .btn-close {
+            line-height: 18px;
+            float: right;
+            border-radius: 50%;          
+            background-color:#f8f8f8;
+            background-image: url('../../content/images/iconsprite.png');
+            background-position:2px -2679px;       
+            background-repeat:no-repeat;
+            width: 20px;
+            height: 20px;
+        }
+           
+
+.dialog .dialog-body {
+        width: 100%;
+        height:400px;
+}
+    .dialog-body table {
+       padding:8px;
+    }
+    .dialog table tr td {
+        padding: 2px 2px;
+       
+    }
+    .dialog-body table tbody tr:nth-child(1),.dialog tr:nth-child(10){
+        font-weight:bold;
+        border-bottom:1px solid #ccc;
+        font-size:15px;
+    }
+    .dialog hr{
+        border-top:1px solid #ccc;
+    }
+    .dialog .td_content {
+        text-align: left;
+        
+    }
+    .dialog .td_content_center {
+         text-align: center;
+        
+    }
+    .dialog input {
+        width:calc(100% - 5px);
+        height: 22px;
+        
+        border: 1px solid #ccc;
+        outline:none;
+    }
+    .dialog select {
+        width: calc(100% + 1px);
+        border: 1px solid #ccc;
+        padding: 1px 2px;
+        height: 28px;
+    }
+    .dialog input[type=date] {
+        width: calc(100% - 2px);
+        height: 26px
+    }
+
+.dialog #imgUrl {
+    width: 134px;
+    height: 144px;
+    border: 1px solid #ccc;
+    /*background-image: url('/content/images/ava.png');
+    background-repeat:no-repeat;*/
+    float:right;
+    
+}
+.dialog #imgView {
+    position: absolute;
+    width: 134px;
+    height: 144px;
+}
+.dialog .btn-cancel-file input[type=button] {
+    background-image: url('../../content/images/iconsprite.png');
+    background-position: 12px -2678px;
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 22px;
+    margin: 0 16px
+}
+.dialog #text-upload{
+    padding:0 12px;
+    
+}
+.dialog #text-upload span{
+   font-weight:bold;
+
+}
+.dialog #uploadfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.dialog .img-footer{
+    position:relative;
+    top:118px;
+    display:flex;
+    align-items:center;
+}
+.dialog .btn-uploadfile {
+    width: 24px;
+    align-items: center;
+    height: 20px;
+    background-color: #fff;
+    padding-left: 15px;
+    margin: 0 10px;
+    border:1px solid #ccc;
+}
+    .dialog .btn-uploadfile:hover{
+        background-color:antiquewhite;
+    }
+    .dialog .btn-cancel-file button {
+        width: 42px;
+        height: 23px;
+        text-align: center;
+        margin-left: 24px;
+    }
+
+
+.dialog .dialog-footer {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-top: 24px
+}     
+    .dialog button{
+        display: flex;
+        align-items: center;
+        height:25px;
+        border-radius: unset;
+        border-style: solid;
+        border-width: 1px;
+        border-color:#ccc;
+        margin:1px 3px;
+    }
+    .left_button {
+        justify-content: flex-start;
+        width: 50%;
+    }
+
+    .right_button {
+        display: flex;
+        justify-content: flex-end;
+        width: 50%;
+    }
+    .dialog button:hover {
+        border-color: #66bdf7;
+    }
+.dialog button:focus {
+    border-color: #7ce8f7;
+}
+
+/*.dialog input[type=text]:focus {
+    box-shadow: 0 0 3px 3px #5aa7cc;
+   
+}
+.dialog textarea:focus {
+    box-shadow: 0 0 3px 3px #5aa7cc;
+}*/
+.popup-confirm {
+    position: absolute;
+    background-color: #ccc;
+    display: none;
+}
+.popup {
+    position: fixed;
+    width: 500px;
+    height: 180px;
+    top: calc(50% - 150px);
+    left: calc(50% - 250px);
+    border-radius: 4px;
+    border: 4px solid #0072bc;
+    background-color: #f8f8f8;
+}
+    .popup .popup-title {
+        height: 30px;
+        width: 100%;
+        background-color: #0072bc;
+        color: #ffffff;
+    }
+    .popup .popup-body {
+        height: 110px;
+        font-size: 18px;
+        display: flex;
+       align-items:center;
+    }
+    .popup .popup-footer {
+        display: flex;
+        bottom: 0;
+        height:40px;
+        align-items:center;
+        float:right
+    }
+    .popup .popup-footer input[type=button]{
+        width:80px;
+        height:30px;
+        margin:0 10px;
+    }
+
+    .dialog .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .dialog .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+.dialog .btn-upload {
+    border: 1px solid #ccc;
+    background: antiquewhite;
+}
+.dialog .validatedialog {
+    -webkit-box-shadow: 1px 1px 4px 1px rgba(250,63,88,1);
+    -moz-box-shadow: 1px 1px 4px 1px rgba(250,63,88,1);
+    box-shadow: 1px 1px 4px 1px rgba(250,63,88,1);
+  
+}
+    .dialog input:focus {
+        box-shadow: 1px 1px 4px 1px #f8f8f8;
+    }
+
